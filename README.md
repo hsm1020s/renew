@@ -6,12 +6,12 @@
 * [프로젝트 목적](#프로젝트-목적)
 * [ERD](#ERD) 
 * [구현 기능](#구현-기능)
-* [프로젝트 회고](#프로젝트-회고)
+* [프로젝트 진행 중 느낀점](#프로젝트-진행-중-느낀점)
 * [Reference](#Reference)
 * [구현 화면](#구현-화면)
 
 ## 개요
-* 프로젝트 이름 : D.MALL 쇼핑몰 프로젝트
+* 프로젝트 이름 : renew
 * 프로젝트 기간(1차,2차) : 2024-03-14 ~ 진행중
 * Back-End : Java17, SpringBoot3.0, MySQL8.0, MyBatis, JSP, Gradle, JUnit5
 * Front-End : HTML, CSS3, JS ES6, Ajax, JQUERY -> 나중에 리액트로
