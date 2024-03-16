@@ -1,28 +1,30 @@
 package com.example.renew.controller;
 
-//import com.example.renew.config.MybatisConfig;
+import com.example.renew.dao.CustomerDaoImpl;
 import com.example.renew.domain.CustDto;
-import com.example.renew.service.CustomerService;
-import org.springframework.context.annotation.Import;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 
-@RestController
-// @Import(MybatisConfig.class)
+@Controller
 @RequestMapping("/customers")
+@RequiredArgsConstructor
+@Slf4j
 public class CustomerController {
-    private final CustomerService customerService;
-
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
+    //private final CustomerService customerService;
+    private  final CustomerDaoImpl customerDao;
 
     @GetMapping
-    public List<CustDto> findAll() {
+    public String findAll(Model model) {
+        List<CustDto> customerList = customerDao.findAll();
+        model.addAttribute("customers", customerList);
 
-        System.out.println("customerService.findAll() = " + customerService.findAll());
-        return customerService.findAll();
+        log.info("customerService.findAll() = {}", customerList);
+        return "customers";
     }
 }
